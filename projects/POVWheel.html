@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<head>
+    <link rel="stylesheet" href="projectStyles.css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,600,700" rel="stylesheet">
+</head>
+
+<body>
+    <div id="content">
+        <h1>POV Wheel</h1>
+        <h3>February 2017 - March 2017</h3>
+            <p>
+                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;A POV Wheel is a
+                strand of lights spinning with the colors changing of each led at
+                certain positions to create an image. <a target="_blank" href="https://www.youtube.com/watch?v=vSkFxiqJLKM">This</a>
+                is a video of someone else's running.</p>
+            <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                I made an agreement with my dad that he would build the wheel spinning
+                structure and I would make the electronics. The first thing I knew it
+                would need to know is it's current position. After much consideration I
+                came to the final solution of a magnet at one moint near the wheel and
+                a magnetic sensor on the rim of the wheel. Based on the time between
+                pulses, you can determine the speed of the wheel and from that, get the
+                position from time since last pulse.&nbsp;</p>
+            <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                At my dad's job, they have a bunch of spare circuit boards so I used
+                one of those to control the lights on the wheel. It tracked the
+                position and talked to the led strip with an SPI bus. The
+                microcontroller was a pic 18f4550. We used it because it can run faster
+                then the usual microcontroller. One of the big challenges was getting
+                the microcontroller to run quickly so that we could spin the wheel
+                faster. I had to learn about what was going on at the base level. I
+                rediscovered MANY times that 1d arrays are faster than any other type
+                of array and to calculate any value that you are going to use more than
+                once ONLY once.</p>
+            <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                To load new pictures on the wheel I made a wheel in Visual Basic that
+                takes an image file and with polar graphing creates arrays in C with
+                the color at certain polar coordinates. It then creates a C header file
+                with the arrays in it. Just compile with the header file and reprogram
+                the wheel. </p>
+            <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                Here is a picture of the wheel spinning. In the end, It had 6 screens
+                and cycled through them. I also used it to ask my girlfriend to
+                prom.&nbsp;</p>
+            <p align="center"><img style="width: 240px; height: 240px;" alt="" src="Images/POVWheel.jpg"></p>
+            <p align="center"><a href="Downloads/POV.zip">POV
+                    Wheel
+                    Source Code</a></p>
+            <p align="center"><a href="Downloads/LEDEncoder.zip">Computer
+                    Software (VB)</a></p>
+            <div id="content" align="center">
+                <p>Finished: March 30 2017</p>
+            </div>
+    </div>
+</body>
+
+</html>

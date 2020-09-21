@@ -1,0 +1,60 @@
+body {
+    font-family: Roboto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+}
+
+p {
+    width:80%;
+    margin:auto;
+    padding-bottom:16px;
+    color: white;
+    line-height:130%;
+}
+
+ul {
+    width:80%;
+    margin:auto;
+    padding-bottom:16px;
+    color: white;
+    line-height:130%;
+}
+
+@media(max-width: 600px) {
+    p {
+        width: 90%;
+    }
+    ul {
+        width: 90%;
+    }
+}
+
+h1 {
+    color: rgb(0,255,33);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 44px;
+    text-align: center;
+    margin: 10px 0;
+}
+
+h3 {
+    color: rgb(0,255,33);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 25px;
+    margin-top: 0;
+}
+
+a {
+    text-decoration: none;
+    vertical-align: middle;
+    color: rgb(0,255,33) !important;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+

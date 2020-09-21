@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<head>
+    <link rel="stylesheet" href="projectStyles.css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,600,700" rel="stylesheet">
+</head>
+
+<body>
+    <div id="content">
+        <h1>PWM Generator</h1>
+        <h3> - February 2017</h3>
+            <p>
+                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;My robotics
+                instructor asked me to make a PWM generator with a screen on it showing
+                it's current setting to controll variable speed motor controllers. I
+                started development by looking at PWM protocol. It passes data based on
+                the width of a pulse. In the case of the motor controllers we use, a
+                1ms pulse is full speed negative and it is a linear relationship to a
+                2ms pulse being full speed forward with a 1.5ms pulse being stopped.</p>
+            <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                The microcontroller I used did not have enough outputs to control two
+                digits of 7-segment displays so my dad tought me a little trick. You
+                put power on the positive leds for each segment and tie it to the leds
+                on the other digit. Then you output power to make the digit you want
+                and ground the digit you want to display. You just then quickly pulse
+                between digits.</p>
+            <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                My instructor wanted me to work with other people on the project so I
+                had a kid 3d print a case for the device. Once we had cases made, I
+                worked with about 5 other kids in an assembly line format to make more
+                while teaching them how it all works.&nbsp;</p>
+            <p align="center"><img style="width: 450px; height: 240px;" alt="" src="Images/PWM.jpg"></p>
+            <p align="center"><a href="Downloads/PWM.sch">Schematic(EAGLE
+                    CAD)</a></p>
+            <p align="center"><a href="Downloads/PWMMain.c">PWM
+                    Source Code</a></p>
+            <div id="content" align="center">
+                <p>Finished: February 16 2017</p>
+            </div>
+    </div>
+</body>
+
+</html>
