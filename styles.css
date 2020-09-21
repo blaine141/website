@@ -356,6 +356,21 @@ hr {
     padding: 0;
 }
 
+.layer {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    line-height: 250px;
+    text-align: center;
+    color: white;
+    transition: .3s;
+    font-family: "Arial Black", Gadget, sans-serif;
+    font-size: 22px;
+}
+
 @media (max-width: 800px) {  
     .tile-container{
         width: 80%;
@@ -367,22 +382,12 @@ hr {
         width: 200px;
         height: 200px; 
     }
+    .layer {
+        line-height: 200px;
+    }
 }
 
-.layer {
-    background-color: rgba(0, 0, 0, 0.7);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    line-height: 200px;
-    text-align: center;
-    color: white;
-    transition: .3s;
-    font-family: "Arial Black", Gadget, sans-serif;
-    font-size: 22px;
-}
+
 
 .layer:hover {
     background-color: rgba(0, 0, 0, 0.2);
