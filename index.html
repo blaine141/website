@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="Styles/Fonts/Fonts.css">
 
+    
     <link rel="preload" href="images/board.jpeg" as="image">
     <link rel="prefetch" href="projects/Backpack.html" as="document">
     <link rel="prefetch" href="projects/EM.html" as="document">
@@ -54,7 +55,6 @@
                         <li class="active first"><a href="#about">About Me</a></li>
                         <li><a href="#projects">Projects</a></li>
                         <li><a href="#contact">Contact</a></li>
-                        <li class="nav-collapsed nav-back"><a onclick="closeProject()"><span class="glyphicon glyphicon-arrow-left"></span></a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </nav>
@@ -143,7 +143,7 @@
                                 </div>
                             </div>
                             <div class="col-xs-12 col-md-6 col-lg-4">
-                                <div class="tile" style="background-image:url('projects/images/Thermostat.png');" onclick="openProject('Thermostat')">
+                                <div class="tile" style="background-image:url('projects/images/Fire.png');" onclick="openProject('Thermostat')">
                                     <div class="layer">
                                         Thermostat
                                     </div>
@@ -185,7 +185,7 @@
                 &lt;
             </div>
         </div>
-        <div class="projectWindow" style="overflow:auto;text-align:center;">
+        <div class="projectWindow" style="overflow:hidden;text-align:center;">
             <iframe id="projectFrame" style="border:none"></iframe>
         </div>
     </div>

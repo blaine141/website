@@ -91,7 +91,6 @@ p {
     background-color: #111; /* Black*/
     overflow-y: visible;
     overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
 }
 
 .transitions {
@@ -352,7 +351,7 @@ hr {
     width: 250px;
     height: 250px;
     background: no-repeat center center;
-    background-size: cover;
+    background-size: contain;
     margin: 20px auto;
     padding: 0;
 }
@@ -405,17 +404,22 @@ hr {
     font-size: 3vw;
 }
 
+.projectWindow {
+    margin-left: 5%;
+    height: 100%
+}
+
+
 @media (max-width: 800px) {  
     .backDiv {
         width: 7%;
         font-size: 4vw;
     }
+    .projectWindow {
+        margin-left: 7%;
+    }
 }
 
-.projectWindow {
-    margin-left: 10%;
-    height: 100%
-}
 
 #projectFrame {
     width: 100%;
