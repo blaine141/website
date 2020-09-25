@@ -10,29 +10,23 @@
         <h1>Thermostat</h1>
         <h3>November 2013 - December 2013</h3>
         <p>
-            &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;My dad asked me to
-            make the thermostat in our workshop remote controlled. I had done it in
-            the past but we had issues with it. I used a Minilab DAQ board to input
-            the temperature and control a relay, so I decided to use the same
-            system.</p>
-        <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-            I had a program always running in the background on my computer that
-            would read data from a file and if it said to turn the thermostat on,
-            it did and then it would update the temperature in the file. I made a
-            webpage to control the thermostat. The webpage used PHP to run a
-            program I made that would read the temperature from the file and update
-            the file with whether the thermostat should be off or on. The PHP page
-            would then display the output of the program.</p>
-        <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              When I was growing up, our family had a workshop separate from our house. We remodeled it adding heating and internet.
+              In the winter we would want it to be warm before we went out to work, but the thermostat was not in the house, it was in the workshop.
+              To make it easier to turn on the heat, we decided to make a web interface for our thermostat.
+            I used a Minilab DAQ board to read the current temperature into the computer and to control the thermostat's relay.</p>
+        <p> 
+            To handle requests, I had a service running in the background on my computer that
+            would read data from a queue to see if there were any new requests. I made a
+            webpage to control the thermostat just by adding commands to the queue. 
+            The webpage used PHP to read from the queue the temperature and report whether it was on or off.</p>
+        <p> 
             I wanted more experience with programming apps so I decided to make an
-            app to control this. I made the app and it used the PHP page to control
-            the thermostat and read the temperature. It passed data to the PHP page
-            using the GET method. Here is what the app and DAQ board looked like:</p>
+            app to control this as well. I made the app and it used the PHP page to control
+            the thermostat and read the temperature. Here is what the app and DAQ board looked like:</p>
         <p align="center"><img style="width: 240px; height: 374px;" alt="" src="Images/Thermostat.png"><br>
             <br>
             <img style="width: 304px; height: 187px;" alt="" src="Images/daq.jpg"></p>
         <div id="content" align="center">
-            <p>Finished: December 27 2016</p>
         </div>
     </div>
 </body>

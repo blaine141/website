@@ -1,15 +1,16 @@
 body {
     font-family: Roboto;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 14px;
+    font-size: 18px;
 }
 
 p {
-    width:80%;
+    width:70%;
     margin:auto;
     padding-bottom:16px;
     color: white;
     line-height:130%;
+    text-indent: 60px;
 }
 
 ul {
@@ -33,7 +34,7 @@ h1 {
     color: rgb(0,255,33);
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
-    font-size: 44px;
+    font-size: 64px;
     text-align: center;
     margin: 10px 0;
 }
@@ -42,7 +43,7 @@ h3 {
     color: rgb(0,255,33);
     font-family: 'Open Sans', sans-serif;
     font-weight: 100;
-    font-size: 14px;
+    font-size: 18px;
     text-align: center;
     margin-bottom: 25px;
     margin-top: 0;

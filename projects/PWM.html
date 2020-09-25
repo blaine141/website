@@ -10,33 +10,29 @@
         <h1>PWM Generator</h1>
         <h3>January 2017 - April 2017</h3>
             <p>
-                &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;My robotics
-                instructor asked me to make a PWM generator with a screen on it showing
-                it's current setting to controll variable speed motor controllers. I
-                started development by looking at PWM protocol. It passes data based on
-                the width of a pulse. In the case of the motor controllers we use, a
-                1ms pulse is full speed negative and it is a linear relationship to a
-                2ms pulse being full speed forward with a 1.5ms pulse being stopped.</p>
-            <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                  My robotics
+                coach asked me to make a PWM generator to control variable speed motor 
+                controllers. The device needed a screen on it to show the current setting. I
+                started development by looking at PWM protocol. Because it passes data through 
+                repeating pulses, I knew this would make the code a little complicated. Not only 
+                did I need to output pulses, I also needed to read from a potentiometer and update the screen. </p>
+            <p> 
                 The microcontroller I used did not have enough outputs to control two
-                digits of 7-segment displays so my dad tought me a little trick. You
-                put power on the positive leds for each segment and tie it to the leds
-                on the other digit. Then you output power to make the digit you want
-                and ground the digit you want to display. You just then quickly pulse
-                between digits.</p>
-            <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-                My instructor wanted me to work with other people on the project so I
-                had a kid 3d print a case for the device. Once we had cases made, I
-                worked with about 5 other kids in an assembly line format to make more
-                while teaching them how it all works.&nbsp;</p>
+                digits of 7-segment displays so I had to learn about multiplexing. The kind of multiplexing I used involves
+                putting power on the positive leads for each segment and tie it to the leads for the same segment
+                on the other digit. Then you output power to the segments to make the digit you want
+                and ground the digit you want to display. Although this only allows one digit to be 
+                displayed at a time, pulsing the screen will make it seem continuous.</p>
+            <p> 
+                Someone else on our robotics team built a 3D printed case for the device and we assembled 
+                a prototype. Everyone liked the device so we recruited some freshmen to make them in an 
+                assembly-line. While they were making them I explained what each of the parts did and why 
+                we were connecting them in that specific way.</p>
             <p align="center"><img style="width: 450px; height: 240px;" alt="" src="Images/PWM.jpg"></p>
             <p align="center"><a href="Downloads/PWM.sch">Schematic(EAGLE
                     CAD)</a></p>
             <p align="center"><a href="Downloads/PWMMain.c">PWM
                     Source Code</a></p>
-            <div id="content" align="center">
-                <p>Finished: February 16 2017</p>
-            </div>
     </div>
 </body>
 

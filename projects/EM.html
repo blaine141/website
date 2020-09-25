@@ -10,18 +10,22 @@
         <h1>EM Order Page</h1>
         <h3>August 2014 - September 2015</h3>
             <p>
-                &nbsp;&nbsp;&nbsp; The <a href="http://www.electrimotion.com" target="_blank">Electrimotion</a>
+                 The <a href="http://www.electrimotion.com" target="_blank">Electrimotion</a>
                 order
-                system is a basic order system which allows the customer to order a
-                product and supply any other notes about the product.</p>
-            <p>&nbsp;&nbsp;&nbsp; All the orders and products are
-                stored in a MySQL database and accessed through a PHP page. The MySQL
-                Database can be used to change the website without even touching any
-                HTML or PHP code.</p>
-            <p>&nbsp;&nbsp;&nbsp;
-                Another cool feature that I made is the UPS Tracking link. Using POST,
-                this sends the tracking number to the UPS page it opens to show you the
-                tracking information.</p>
+                system is an order system I was asked to make. It needed to allow a customer to order a
+                product and supply any other notes about the product. There also needed to be an internal portal 
+                to view the orders, update their progress, and supply shipping information. The customer could also 
+                view all this information on a status page.</p>
+            <p> All the orders and products are
+                stored in a MySQL database and accessed through a PHP page. 
+                The website is dynamic and the company can update the orders either by using 
+                their internal portal or by updating their database</p>
+            <p>
+                Another cool feature that I made is the UPS Tracking link. At the time UPS did not have an easy 
+                way to open up a tracking number by URL. They required you to fill out a form with post to view tracking info. 
+                Electrimotion still wanted to be able to link to UPS tracking orders, though. My workaround was to have a hidden form with 
+                all the same info as the UPS form and when you click the link, it really just submits the form to UPS. The result was effectively 
+                a link that will open up your tracking info with UPS</p>
     </div>
 </body>
 

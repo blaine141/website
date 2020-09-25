@@ -10,107 +10,88 @@
         <h1>Robotics Scouting</h1>
         <h3>February 2017 - March 2017</h3>
         <p>
-            &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;Last year, Liz
-            Halter from Olentangy High school with the help of her dad created an
-            interesting scouting system. We never really did any scouting before
-            created her system that year. She made a program hosted from a computer
+              In 2016, our robotics team created its first scouting system. Scouting in 
+              FRC is when you record information about other teams to better prepare to 
+              work with or compete with them. That first scouting system was a program hosted from a computer
             that other devices would connect to through a wired network. It would
             then make decisions about matches from that data collected. We won an
-            award that year for our scouting system. I didn't help her make or
-            operate any of it so that is about as much as I know.&nbsp;</p>
-        <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-            This year, 2017, I wanted to follow in her footsteps, so early in the
+            award that year for our scouting system. I didn't help make or
+            operate any of it so that is about as much as I know.</p>
+        <p> 
+            In 2017, I wanted to follow in the team's footsteps, so early in the
             year I started developing software. I was in AP Statistics so I decided
             to make it all fancy. I added probability of win calculations and all
-            other sorts of features.&nbsp;</p>
-        <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+            other sorts of features.</p>
+        <p> 
             About two weeks later I heard other people saying that they wanted to
             work on scouting. I joined in on the conversation and we started from
-            scratch. The original team was me, Ryan Schwartz, Will Main, and the
-            adult mentor Patrick Worth. We had a series of meetings where we
+            scratch. The original team was 3 students and a parent. We had a series of meetings where we
             discussed objectives and end goals. It was a pretty good experience to
-            be working on a team like that brainstorming. Mr. Worth had worked with
+            be working on a team with mixed experiences. The Parent had worked with
             this web service called <a target="_blank" href="https://www.drupal.org/">Drupal</a>.
-            It allows data structures and... I don't quite know the name. Anyway
-            Mr.
-            Worth had experience and he shared it with us.&nbsp;</p>
-        <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+            It was able to store data and display webpages. We decided it may be useful to use.</p>
+        <p> 
             Once we had all the ideas on the board, we started eliminating and
-            narrowing down onto what we wanted. We finally came to the solution. We
-            would have a web app, a website that you can cache and run as an app. We would then share this app with
-            other teams and have them collect data, then share some of our resources with them. Gracious
-            professionalism, guys.
-            Ryan Schwartz was in charge of the app. How it would work is you record
-            auto data, amount of fuel scored, starting position, whether or not a
-            gear was scored, whether there is a gear in the not, whether the line
-            was crossed, etc. Then, during teleop, you would record when events
-            happened in the match. When the bot picked up a gear, you would click
-            the gear start button. When it was delivered, you would select stop and
-            select whether or not the gear was delivered successfully, effectively
-            creating a timeline of the match. Then at the end of the match you can
-            record notes and show where the bot usually traveled. The team scout
-            recorded all that information. Now in the brainstorming process we
-            concluded that It would be near impossible to watch the whole match and
-            also keep track of fuel score. So we had another type of scout, the
-            fuel scout. They recorded how the fuel score changed for each alliance
-            during the match. The app also had features for assigning certain
-            people to specific matches. Ryan really put focus on making the app look nice with Google's material design.
-            I have to admit, it looks nice, and he even showed me how to incorporate the design in my slideshow. <a target="_blank"
-                href="http://olentangyfrc.org/scouting/">This page</a>
-            has some info on the app.</p>
+            narrowing down onto what we wanted. We decided
+            would have a web app to collect data, a website that you can cache and run as an app. We would then share this app with
+            other teams and have them collect data, then share some of our resources with them. 
+            Another student was in charge of the app. How it would work is you record
+            what happens and when it happens during a match. When the robot picks something 
+            up, you click a button, when you drop it off, you click a button. Then at the end of the match you can
+            record notes and show where the bot usually traveled. All of this data would effectively make a summary and timeline of the match. 
+            The team scout recorded all that information and their name. 
+        </p>
         <p align="center"><img style="height: 400px;" alt="" src="Images/ScoutingApp.png"></p>
-        <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-            I worked on the data storage website and the analytics. As I said
-            earlier, the website was made with Drupal. I made data structures and
+        <p> 
+            I worked on the data storage website and the analytics. The website was 
+            made with Drupal. I made data structures and
             Mr. Worth taught me how to make modules using PHP. I made modules to
             take JSON formatted input and create the data structures to represent
             that information. From the website you could view each match and info
             about them. From that point the data was exported through JSON and
             downloaded to be analyzed.</p>
-        <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        <p> 
             My analysis program was created in Visual Basic. It looked at the
-            events recorded and then converted that to useful data as simple as
-            average gears per match to the usual amount of time taken to score one
-            gear to the accuracy of the shooter. To know how well the shooters
-            scored, it matched up each change in the fuel score to a team by
-            looking at when each team was shooting. All of this data was then
+            events recorded and then converted that to useful metrics. These metrics 
+            included the accuracy of their shooter, time to climb a rope, and how many 
+            gears they can deliver in a match. All of this data was then
             compiled down into team and match info. For each match it looked at how
-            much time it took for them to score fuel and gears and then calculated
-            how many gears and fuel each team should score for a highest alliance
-            score. Then, for each team, data was exported into CSV files. One file
-            contained general summary information for each team, one contained each
-            event from each match for each team, and finally, one contained info on
-            where the team usually drives their bot. Another file contained match
-            optimization info.</p>
-        <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+            much time it took for a team to score fuel and gears and then calculated
+            how many gears and fuel each team should score in an average match. This 
+            info was then used to predict how matches would turn out. Using the statistics, 
+            it ran some different scenarios and found which scenario led to the highest score.
+            After all this processing, the data was exported into csv files.
+        </p>
+        <p> 
             All of this data meant nothing if you didn't have a way to look at it.
-            Liz used Tableau, a data visualization software last year, so we
-            decided to go down the same route. We made a sheet for team info and a
+            Someone recommended to me Tableau, a data visualization software. It looked nice 
+            and had many visuals to represent the data we processed. We made an info sheet for team info and a
             sheet for match info. You just selected which team or match you want
-            and it will show you all the data for that team or match. There is too
+            and it will show you all the data for that team or prediction for that match. There is too
             much info to list so I will just show you a picture of each.</p>
-        <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-            &nbsp;Match Dashboard:</p>
+        <p> 
+            Match Dashboard:</p>
         <p align="center"><img style="height: 500px;" alt="" src="Images/ScoutingMatch.png"></p>
-        <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-            &nbsp;Team Dashboard:</p>
+        <p> 
+            Team Dashboard:</p>
         <p align="center"><img style="height: 500px;" alt="" src="Images/ScoutingTeam.png"></p>
-        <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        <p> 
             Before each match we would just print
-            off the match dashboard for each alliance and brief our alliance on
-            what we were going to see in the next match.&nbsp;</p>
-        <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+            off the match dashboard and brief our alliance on the predicted outcome
+            and best strategy from all the data. When we saw we were going to win, 
+            we followed the way the paper suggested we win. When we were predicted to lose, 
+            we looked where the other team drove and how they would get points so we could get in their way.
+            We never lost a match we were predicted to win and we won some matches we were predicted to lose.</p>
+        <p> 
             One other thing I wanted to make was a slideshow in the pit area that
-            will show summaries of scouting data. Some of the slides that were
-            included were the top three climbers, shooters, and gear teams. It also
-            included a slide for match predictions for upcoming matches and the
-            "Dream Alliance". All of this could be easily updated by plugging a
-            flash drive in the laptop which triggers it to copy all of the scouting
-            info off and update the slideshow. Pretty cool, huh?</p>
+            will show summaries of scouting data. The slideshow would be updated 
+            live with the data and report some fun information.
+            Some slides were fastest climbers, best shooter, and 
+            "Dream alliance", the pairing that would do the best together.
+            All of this could be easily updated by plugging a
+            flash drive in the laptop containing the CSVs. Once the drive was plugged in, it would trigger a copy of all the scouting
+            info and update the slideshow. Pretty cool, huh?</p>
         <p align="center"><img style="height: 500px;" alt="" src="Images/ScoutingSlideshow.png"></p>
-        <p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-            I have to say, it was
-            quite an experience even though I spent my whole spring break coding.</p>
         <p align="center"><a href="Downloads/Scouting.twb">Tableau
                 Workbook</a></p>
         <p align="center"><a href="Downloads/ScoutingAnalysis.zip">Analytics
@@ -119,7 +100,6 @@
                 (VB)</a></p>
         <p align="center"><a href="Downloads/OzoneAnalyticsController.php">Drupal Module</a></p>
         <div id="content" align="center">
-            <p>Finished: March 30 2017</p>
         </div>
     </div>
 </body>
