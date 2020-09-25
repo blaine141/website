@@ -10,47 +10,46 @@
         <h1>Acoustics</h1>
         <h3>April 2018 - July 2019</h3>
         <p>
-            When I first joined the underwater robotics team, the robot did not have a control system. 
-            The summer of 2018 we worked together and created a disorganized but functional control system. 
-            It, however, required that the robot remain upright to be stable. The summer of 2019 we upgraded the system to be a 
-            little more smooth while allowing the robot to be upside down. 
+            One part of the RoboSub competition is listening to and locating an acoustic pinger. 
+            These pingers are located at important tasks in the competition. If a robot can know where these pingers are, it makes
+            navigating to tasks much easier.
         </p>
         <p>
-            The summer of 2020 comes around and we have big plans for the robot. We want to plan trajectories for the
-            robot to follow and then have it follow that trajectory. The controls system at the time did not have the capability to
-            follow trajectories, so we knew we had to change the controller. Instead of patching the old controller we decided
-            to create a new control system.
+            When I went to the first informational meeting, they told me all about acoustics and what we needed to achieve. Before even joining 
+            the team I started to look into the math and how acoustics works. I knew that it was based on time differences between the microphones so I modeled the 
+            scenario and derived equations to get the exact coordinates of the source of the ping. I even created a simulation program to test
+            as many ping location scenarios as possible to see if the equations failed in any situation. They appeared to work perfectly.
         </p>
         <p>
-            The team had already looked into LQR control, but did not make much progress. Instead of trying again at LQR, the team decided to
-            embrace a new and simpler idea so that all members could understand. Cascaded PID control. The idea is to use a PID controller to control velocity by outputting acceleration
-            to the thrusters. Then, to control position, a PID controller outputs velocity to the other PID controller. This system will
-            speed up to drive to the target and slow down once it's near. In our specific circumstance, we could get by with only P control and no I or D term.
-            We were using cascaded P controllers. 
+            After we talked about the data processing side of things and everyone said they liked my math, we moved on to hardware. We talked to an
+            employee at TI for his advice on how to make the capturing system. They suggested using a specific ADC. No microcontroller was fast enough to 
+            pull data from the ADC while it was capturing so we decided to go with an FPGA. We got a dev board for the FPGA and ADC and got them to communicate with
+            each other. The FPGA needed to store all the data in RAM before it could offload it though the USB port. We had proven the concept enough to go all in with the design.
         </p>
         <p>
-            P controllers are not great at handling the constant forces you experience underwater such as buoyancy or drag, so we
-            removed those effects mathematically. Whatever acceleration the P controller requested, a force would be calculated and then buoyant force and drag added to cancel the effects.
-            This force will then be output by the thrusters to achieve the acceleration requested. These buoyancy parameters and drag parameters
-            were determined experimentally through calibration code. 
+            We decided to keep using the FPGA dev board rather than making a custom FPGA board. To communicate with the FPGA, we decided
+            to make a breakout board that mounts on to the dev board. This board contained all the ADCs and filter / preamp circuitry. I 
+            worked with the digital side of things, one of my teammates worked on all the analog circuitry. 
         </p>
         <p>
-            In order to follow a trajectory, one just needs to feed in information about the current position, velocity, and acceleration.
-            The controller will then fight to be at that position, have that velocity, and also output the given acceleration at that moment.
-            The P controllers work by outputting a velocity or acceleration that adds onto the target velocity or acceleration. For example,
-            if the given velocity is 1m/s but the position is a little behind, a positive corrective velocity will be added to the 1m/s.
+            Once the thing was assembled, we developed the time difference detection algorithm. We then ran some tests, put those time
+            differences into my equations, and ran into imaginary outputs. I reviewed my equations again and again but could not find the problem.
+            It worked in simulation, but did not work with real data. After some more experimentation I realized the equations were not noise resistant.
+            When I ran the simulation again with a little noise, and got an invalid result. I would have to start again from square one.
         </p>
         <p>
-            One of these cascaded P controllers was used for the 3 linear dimensions and one used for the angular dimensions. The math on the angular position
-            controller was a little different due to the circular nature of quaternions. To calculate the velocity, a difference quaternion was computed and then extrapolated
-            to angular velocity. After that velocity differences were calculated the same.
-            to angular velocity. After that velocity differences were calculated the same.
+            I initially tried to reduce error in time differences by trying different detection algorithms. The first was an FFT based approach, 
+            the second was FFT based but with a little more filtering and math, and the final was a computer vision based approach. If I searched for the waveform of one hydrophone
+            in the other hydrophones, it actually gave a more accurate response than the FFT algorithm. 
         </p>
         <p>
-            To convert body-frame forces to thruster speeds, an optimizer was used. It has all the equations of motion for how thruster
-            forces translate to body forces. It finds the best thruster forces to output the most correct body-frame force with the least power consumed.
-            The optimizer also knows about the max forces a thruster can output and whether or not it is submerged and can adapt as necessary.
+            To remedy the noise issue, I decided to detect the direction of arrival rather than the position of the pinger. Direction only 
+            required basic trigonometry and did not need my complicated equation I had calculated earlier. After a few tests, the system was accurately
+            reporting azimuth and altitude. Out of water tests worked but we ultimately did not finish the project as other projects took higher priority.
         </p>
+        
+        <p class="link"><a href="https://github.com/osu-uwrt/maelstrom_firmware/tree/master/Acoustics" target="_blank">FPGA configuration</a></p>
+        <p class="link"><a href="https://github.com/osu-uwrt/uwrt_electronics/tree/master/Maelstrom%20Boards/Acoustics" target="_blank">Acoustics Breakout Board</a></p>
 
     </div>
 </body>
