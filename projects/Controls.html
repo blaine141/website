@@ -13,8 +13,9 @@
             When I first joined the underwater robotics team, the robot did not have a control system. 
             The summer of 2018 we worked together and created a disorganized but functional control system. 
             It, however, required that the robot remain upright to be stable. The summer of 2019 we upgraded the system to be a 
-            little more smooth while allowing the robot to be upside down. 
+            little more smooth while allowing the robot to be upside down. One problem we faced with this system was gimbal lock due to the euler angles.
         </p>
+        <p class="image"><img style="width: 100%; max-width: 600px; height: auto;" src="images/gimbal.gif" /></p>
         <p>
             The summer of 2020 came around and we had big plans for the robot. We wanted to plan trajectories for the
             robot to follow and then have it follow that trajectory. The controls system at the time did not have the capability to
@@ -45,10 +46,15 @@
             controller was a little different due to the circular nature of quaternions. To calculate the velocity, a difference quaternion was computed and then extrapolated
             to angular velocity. After that, velocity differences were calculated the same as linear.
         </p>
+        <p class="image"><img style="width: 100%; max-width: 600px; height: auto;" src="images/Control diagram.jpg" /></p>
         <p>
             To convert body-frame forces to thruster speeds, an optimizer was used. It has all the equations of motion for how thruster
             forces translate to body forces. It finds the best thruster forces to output the most correct body-frame force with the least power consumed.
             The optimizer also knows about the max forces a thruster can output and whether or not it is submerged and can adapt as necessary.
+        </p>
+        <p>
+            Due to COVID, this code has not been tested on the robot but works well in 
+            simulation. It meets all the requirements it was set out to achieve.
         </p>
         <p class="link"><a href="https://github.com/osu-uwrt/riptide_controllers/tree/c3cf3df80afcff7b5f448229b2f983f25f0a858e" target="_blank">Control Code</a></p>
         
