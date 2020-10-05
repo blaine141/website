@@ -10,10 +10,10 @@
         <h1>POV Wheel</h1>
         <h3>February 2017 - March 2017</h3>
             <p>
-                  A POV Wheel is a
+                  A Persistence of Vision (POV) Wheel is a
                 strand of lights spinning on a wheel. The lights change colors at 
-                different points in the spin so it effectively paints a picture. Because 
-                of persistance of vision, we see all the lights at each position showing us a full image.
+                different points in the spin to effectively paint a picture. Because 
+                of persistence of vision, we see all the lights at each position, showing us a full image.
                 <a target="_blank" href="https://www.youtube.com/watch?v=vSkFxiqJLKM">This</a>
                 is a video of another one running (I did not have a long exposure video camera to video mine).</p>
             <p> 
@@ -26,18 +26,18 @@
                 the speed of the wheel and from that, get how far the wheel has traveled since the last pulse.</p>
             <p class="image"><img style="width: 100%; max-width: 400px; height: auto;" alt="" src="Images/POVPrototype.jpg"></p>
             <p> 
-                At my dad's job, they have a bunch of spare circuit boards so I used
+                At my dad's job, they have a bunch of spare circuit boards. I used
                 one of those to control the lights on the wheel. It listened to the magnet sensor and 
                 talked to the led strip with an SPI bus. One of the big challenges I faced is getting the micro to run fast enough.
                 Every few degrees, the micro had to read from memory, queue it up, and send it out to the lights.
                 To help, I used a PIC 18f4550. It was slightly faster than the other micros I had available. 
                 It helped, but I still needed further optimization to get the display to look better. 
                 The main problem was the array used to store the image. It was stored as a 2D 
-                array, and I was indexing it every loop. This means every array access, 
-                multiplication had to occur to figure out where to access. 
-                The final solution was saving a pointer to a row so the multiplication does not happen multiple times. Indexing happens relative to the pointer.</p>
+                array, and I was indexing it every loop. This means for every array access there had to be 
+                multiplication to figure out where to access. 
+                The final solution was saving a pointer to a row, so the multiplication does not happen multiple times. Indexing happens relative to the pointer.</p>
             <p> 
-                To load new pictures on the wheel I made a program in Visual Basic that
+                To load new pictures on the wheel, I made a program in Visual Basic that
                 takes an image file and creates arrays in with
                 the color at certain polar coordinates. It then creates a C header file
                 with the arrays in it ready to drop into my project. Just compile with the header file, reprogram
