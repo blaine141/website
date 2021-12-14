@@ -10,6 +10,11 @@ if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elain
 
 /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
 function openProject(project) {
+    gtag('event', 'page_view', {
+        page_title: project,
+        page_location: "projects/" + project + ".html",
+        page_path: "projects/" + project + ".html"
+      })
     $("#projectFrame").attr("src", "projects/" + project + ".html")
     document.getElementById("mySideproject").style.width = (viewport.width()) + "px";
     document.getElementById("viewport").style.marginRight = (viewport.width() * .95) + "px";
@@ -25,6 +30,11 @@ function closeProject() {
     document.getElementById("main").style.marginRight = "0";
     projectOpen = false;
 }
+
+// Fixing GA bounce tracking
+$(window).on('beforeunload', function () {
+    gtag('event', 'bounce');
+});
 
 
 var lnStickyNavigation = viewport.height() - 60;
